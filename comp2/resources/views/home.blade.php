@@ -13,7 +13,7 @@
                     <h3 class="text-[2.5rem] text-[#2c2c54]">{{$post->title}}</h3>
                     <h5 class="text-[2rem]">{{$post->firstname}} {{$post->surname}}</h5>
 
-                    <p class="text-[1.6rem] text-[#666] p-[1rem_0] "><span>Category:</span><a href="#"
+                    <p class="text-[1.6rem] text-[#666] p-[1rem_0] "><span>Category:</span><a href="/categories/{{$post->category->slug}}"
                             class="hover:text-blue-600 underline hover:italic">{{$post->category->name}}</a></p>
 
                     <p class="text-[1.6rem] text-[#666] p-[1rem_0]">Price: ${{$post->price}}</p>
