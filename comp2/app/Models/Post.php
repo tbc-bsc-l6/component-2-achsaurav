@@ -11,4 +11,10 @@ class Post extends Model
 
     // protected $fillable=['title','firstname','surname','price','pages'];
     protected $guarded=['id'];
+
+    protected $with=['category'];
+
+    public function category(){
+        return $this->belongsTo(Category::class);//Eloquent Relationship
+    }
 }
