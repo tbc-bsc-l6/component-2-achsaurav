@@ -10,7 +10,8 @@ class PostController extends Controller
     public function show()
     {
         return view('home', [
-            'posts' => Post::latest()->filter(request(['search']))->get()
+            // 'posts' => Post::latest()->filter(request(['search']))->get()
+            'posts' => Post::latest()->filter(request(['search']))->paginate(8)->withQueryString()
         ]);
     }
 

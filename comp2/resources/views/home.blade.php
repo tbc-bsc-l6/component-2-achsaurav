@@ -24,8 +24,12 @@
                     asperiores?
                 </p> --}}
                 </div>
+                
             @endforeach
+            
         </div>
+        {{-- {{$posts->links('pagination::simple-tailwind')}} --}}
+        {{$posts->links()}}
 
     </section>
 
