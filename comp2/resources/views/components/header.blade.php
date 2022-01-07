@@ -18,6 +18,9 @@
         </div>
         
         <ul class="flex flex-wrap list-none	">
+            <form action="#" method="get">
+                <input type="text" name="search" id="search" placeholder="search" value="{{request('search')}}" class="rounded-[5px] h-[40px] w-[150px] text-[16px]">
+            </form>
             <li class="m-[0_5px]"><a class="no-underline text-[18px] font-medium p-[8px_15px] rounded-[5px] tracking-[1px] transition-all delay-[0.3s]" href="/">HOME</a></li>
            <li class="m-[0_5px]"><a class="no-underline text-[18px] font-medium p-[8px_15px] rounded-[5px] tracking-[1px] transition-all delay-[0.3s]" href="#">BOOK</a></li>
            <li class="m-[0_5px]"><a href="#" class="no-underline text-[18px] font-medium p-[8px_15px] rounded-[5px] tracking-[1px] transition-all delay-[0.3s]">CD</a></li>
