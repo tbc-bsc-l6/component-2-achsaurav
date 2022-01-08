@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         
-        Post::factory(30)->create();
+        Post::factory(10)->create();
         User::factory(1)->create();
 
         // $book=Category::create([

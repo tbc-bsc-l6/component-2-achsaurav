@@ -9,7 +9,7 @@
     {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
     <!-- <link rel="stylesheet" href="/style.css"> -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    {{-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> --}}
 </head>
 <body class="bg-gray-100">
 

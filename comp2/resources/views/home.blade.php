@@ -29,7 +29,7 @@
             
         </div>
         {{-- {{$posts->links('pagination::simple-tailwind')}} --}}
-        {{$posts->links()}}
+        {{$posts->links('pagination::simple-tailwind')}}
 
     </section>
 
