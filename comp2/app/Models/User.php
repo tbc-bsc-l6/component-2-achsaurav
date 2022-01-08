@@ -43,7 +43,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
+    
+    //Eloquent Mutator
     public function setPasswordAttribute($password){///set followed by attribute name and followed by attribute
         $this->attributes['password']=bcrypt($password);
     }
