@@ -42,6 +42,8 @@
                     </form>
                 </li>
             @else
+                <li class="m-[0_5px]"><a href="/login" class="no-underline text-[18px] font-medium p-[8px_15px] rounded-[5px] tracking-[1px] transition-all delay-[0.3s]">LOGIN</a></li>
+
                 <li class="m-[0_5px]"><a href="/register" class="no-underline text-[18px] font-medium p-[8px_15px] rounded-[5px] tracking-[1px] transition-all delay-[0.3s]">REGISTER</a></li>
            @endauth
         </ul>
