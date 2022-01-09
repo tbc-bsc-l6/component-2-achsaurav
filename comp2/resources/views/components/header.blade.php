@@ -26,11 +26,34 @@
            <li class="m-[0_5px]"><a class="no-underline text-[18px] font-medium p-[8px_15px] rounded-[5px] tracking-[1px] transition-all delay-[0.3s]" href="#">BOOK</a></li>
            <li class="m-[0_5px]"><a href="#" class="no-underline text-[18px] font-medium p-[8px_15px] rounded-[5px] tracking-[1px] transition-all delay-[0.3s]">CD</a></li>
            <li class="m-[0_5px]"><a href="#" class="no-underline text-[18px] font-medium p-[8px_15px] rounded-[5px] tracking-[1px] transition-all delay-[0.3s]">GAME</a></li>
-           <li class="m-[0_5px]"><a href="/register" class="no-underline text-[18px] font-medium p-[8px_15px] rounded-[5px] tracking-[1px] transition-all delay-[0.3s]">REGISTER</a></li>
+           {{-- @guest
+                <li class="m-[0_5px]"><a href="/register" class="no-underline text-[18px] font-medium p-[8px_15px] rounded-[5px] tracking-[1px] transition-all delay-[0.3s]">REGISTER</a></li>
+           @endguest --}}
+           {{-- @unless (auth()->check())
+                <li class="m-[0_5px]"><a href="/register" class="no-underline text-[18px] font-medium p-[8px_15px] rounded-[5px] tracking-[1px] transition-all delay-[0.3s]">REGISTER</a></li>
+           @endunless --}}
+
+           @auth
+                <li class="m-[0_5px] text-[18px] font-medium">Welcome, {{auth()->user()->name}}</li>
+                <li class="m-[0_5px] text-[18px] font-medium">
+                    <form action="/logout" method="post">
+                        @csrf
+                        <button type="submit" class="bg-red-500">Logout</button>
+                    </form>
+                </li>
+            @else
+                <li class="m-[0_5px]"><a href="/register" class="no-underline text-[18px] font-medium p-[8px_15px] rounded-[5px] tracking-[1px] transition-all delay-[0.3s]">REGISTER</a></li>
+           @endauth
         </ul>
     </nav>
 
     
     {{$slot}}
+
+    @if (session()->has('success'))
+        <div class="fixed bg-blue-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-[16px]">
+            <p>{{session('success')}}</p>
+        </div>
+    @endif
 </body>
 </html>
