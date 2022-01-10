@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Symfony\Component\HttpFoundation\Response;
 
 class PostController extends Controller
@@ -27,6 +28,23 @@ class PostController extends Controller
         //     abort(Response::HTTP_FORBIDDEN);
         // }
         return view('addProduct');
+    }
+
+    public function store(){
+        // ddd(request()->all());
+        $attributes = request()->validate([
+            'category_id'=>['required',Rule::exists('categories','id')],
+            'title'=>['required',Rule::unique('posts','title')],
+            'firstname'=>'required',
+            'surname'=>'required',
+            'price'=>'required',
+            'pages'=>'required'
+        ]);
+        
+
+        Post::create($attributes);
+
+        return redirect('/');
     }
 
 }

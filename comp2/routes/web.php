@@ -38,6 +38,5 @@ Route::post('/logout',[SessionController::class,'destroy'])->middleware('auth');
 
 Route::get('/admin/posts/create',[PostController::class,'create'])->middleware('admin');
 
-Route::get('/add',function(){
-    return view('addProduct');
-});
+Route::post('/admin/posts',[PostController::class,'store'])->middleware('admin');
+
