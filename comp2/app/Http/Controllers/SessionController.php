@@ -19,18 +19,19 @@ class SessionController extends Controller
         ]);
 
         //based on provided credintials
-        if(auth()->attempt($attributes)){
-            session()->regenerate();//session fixation handlaning
-            //redirect with success flash message
-            return redirect('/')->with('success','Welcome Back!');
+        if(! auth()->attempt($attributes)){
+            throw ValidationException::withMessages(['email'=>"Your provided credintials are incorrect."]);
+            // return back()
+            //     ->withInput()
+            //     ->withErrors(['email'=>"Your provided credintials are incorrect."]);
         }
 
+
+        session()->regenerate();//session fixation handlaning
+        //redirect with success flash message
+        return redirect('/')->with('success','Welcome Back!');
         // auth failed
 
-        throw ValidationException::withMessages(['email'=>"Your provided credintials are incorrect."]);
-        // return back()
-        //     ->withInput()
-        //     ->withErrors(['email'=>"Your provided credintials are incorrect."]);
     }
 
 
