@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en" class="text-[62.5%]">
+<html lang="en" class="text-[65.5%]">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,10 +35,11 @@
 
            @auth
                 <li class="m-[0_5px] text-[18px] font-medium">Welcome, {{auth()->user()->name}}</li>
+                <a href="/admin/posts/create"><li class="m-[0_5px] text-[18px] font-medium">New Post</li></a>
                 <li class="m-[0_5px] text-[18px] font-medium">
                     <form action="/logout" method="post">
                         @csrf
-                        <button type="submit" class="bg-red-500">Logout</button>
+                        <button type="submit" >Logout</button>
                     </form>
                 </li>
             @else

@@ -1,11 +1,13 @@
 <x-header>
-    <div class="md:max-w-[60%] md:m-auto md:text-[.9em]">
+    
+    <div class="md:max-w-[60%] md:m-auto md:text-[.9em] " >
         
         <form action="/admin/posts" method="post" >
             @csrf
-            <fieldset class="mb-[30px] border-none">
+            <fieldset class="mb-[30px] border-none ">
+               
                 <legend class="text-[2.4em] font-medium mb-[30px] odd:pt-[40px] text-center">Add Product</legend>
-
+                
                 <div class="md:flex">
                     <label for="category_id" class="md:flex-[1_200px] md:max-w-[150px] md:pb-[30px] m-[auto_0] block mb-[8px] text-[15px] font-medium"> Product Type: </label>
                     @php
