@@ -38,13 +38,15 @@
                             class="py-2 pl-3 text-sm font-semibold w-full lg:w-32 text-left flex lg:inline-flex bg-blue-500 rounded-full text-white">{{auth()->user()->name}}
                             
                         </button>
-        
-                        <div x-show="show" class="absolute bg-gray-100 z-50 overflow-auto max-h-52">
-                            
-                            <a href="/admin/posts" class="block text-left px-3 hover:bg-gray-300  mt-1">Dashboard</a>
-                            <a href="/admin/posts/create" class="block text-left px-3 hover:bg-gray-300  mt-1">New Post</a>
-                            
-                        </div>
+                        @can('admin')
+                            <div x-show="show" class="absolute bg-gray-100 z-50 overflow-auto max-h-52">
+                                
+                                <a href="/admin/posts" class="block text-left px-3 hover:bg-gray-300  mt-1">Dashboard</a>
+                                <a href="/admin/posts/create" class="block text-left px-3 hover:bg-gray-300  mt-1">New Post</a>
+                                
+                            </div>
+                        @endcan
+                       
                     </div>
                     {{-- <a href="/" class="text-xs font-bold uppercase">Welcome, {{ auth()->user()->name }}</a> --}}
                     {{-- <a href="/" class="text-xs font-bold uppercase">Welcome</a> --}}
