@@ -33,7 +33,7 @@ class AdminPostController extends Controller
         $attributes = request()->validate([
             'category_id'=>['required',Rule::exists('categories','id')],
             'title'=>['required',Rule::unique('posts','title')],
-            'firstname'=>'required',
+            'firstname'=>'',
             'surname'=>'required',
             'price'=>'required',
             'pages'=>'required'
@@ -53,7 +53,7 @@ class AdminPostController extends Controller
         $attributes = request()->validate([
             'category_id'=>['required',Rule::exists('categories','id')],
             'title'=>['required',Rule::unique('posts','title')->ignore($post->id)],
-            'firstname'=>'required',
+            'firstname'=>'',
             'surname'=>'required',
             'price'=>'required',
             'pages'=>'required'

@@ -21,6 +21,15 @@ class PostController extends Controller
         ]);
     }
 
+    public function display(Category $category){
+        return view('home-category',[
+            'posts'=>$category->post,
+            'categories'=>Category::all(),
+            'currentCategory'=>$category
+    
+        ]);
+    }
+
     public function create(){
 
         // if(auth()->guest()){

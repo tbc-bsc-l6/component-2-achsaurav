@@ -77,7 +77,7 @@
             
         </div>
         {{-- {{$posts->links('pagination::simple-tailwind')}} --}}
-        {{ $posts->links() }}
+        {{-- {{ $posts->links() }} --}}
         {{-- {{ $posts->links('pagination::tailwind') }} --}}
     </main>
     

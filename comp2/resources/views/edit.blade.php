@@ -27,14 +27,14 @@
                 </div>
 
                 <div class="md:flex">
-                    <input required type="text" value="{{old('title'), $post->title}}" class="md:flex-[2_550px] md:max-w-[80%] text-[16px] w-[80%] rounded-[5px] shadow-[0_1px_0_rgba(0,0,0,0.03)] h-auto m-0 outline-0 p-[15px] mb-[30px] border-none opacity-50 focus:border-[2px] focus:border-solid focus:border-black opacity-100" id="title" name="title" placeholder="title">
+                    <input required type="text" value="{{ $post->title}}" class="md:flex-[2_550px] md:max-w-[80%] text-[16px] w-[80%] rounded-[5px] shadow-[0_1px_0_rgba(0,0,0,0.03)] h-auto m-0 outline-0 p-[15px] mb-[30px] border-none opacity-50 focus:border-[2px] focus:border-solid focus:border-black opacity-100" id="title" name="title" placeholder="title">
                     @error('title')
                         <p class="text-red-500 text-[18px] mt-1">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div class="md:flex">
-                    <input required type="text" value="{{$post->firstname}}" class="md:flex-[2_550px] md:max-w-[80%] text-[16px] w-[80%] rounded-[5px] shadow-[0_1px_0_rgba(0,0,0,0.03)] h-auto m-0 outline-0 p-[15px] mb-[30px] border-none opacity-50 focus:border-[2px] focus:border-solid focus:border-black opacity-100" id="firstname" name="firstname" placeholder="firstName">
+                    <input type="text" value="{{$post->firstname}}" class="md:flex-[2_550px] md:max-w-[80%] text-[16px] w-[80%] rounded-[5px] shadow-[0_1px_0_rgba(0,0,0,0.03)] h-auto m-0 outline-0 p-[15px] mb-[30px] border-none opacity-50 focus:border-[2px] focus:border-solid focus:border-black opacity-100" id="firstname" name="firstname" placeholder="firstName">
                     @error('firstname')
                         <p class="text-red-500 text-[18px] mt-1">{{ $message }}</p>
                     @enderror

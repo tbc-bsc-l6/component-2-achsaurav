@@ -634,9 +634,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-solid {
   border-style: solid;
 }
-.border-dashed {
-  border-style: dashed;
-}
 .border-none {
   border-style: none;
 }

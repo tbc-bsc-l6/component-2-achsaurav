@@ -21,15 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PostController::class,'show']);
 
-Route::get('/categories/{category:slug}',function(Category $category){
-    return view('home',[
-        
-        'posts'=>$category->post,
-        'categories'=>Category::all(),
-        'currentCategory'=>$category
-
-    ]);
-});
+Route::get('/categories/{category:slug}',[PostController::class,'display']);
 
 Route::get('/register',[RegisterController::class,'create'])->middleware('guest');
 
