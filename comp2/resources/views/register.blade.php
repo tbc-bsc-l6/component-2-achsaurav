@@ -11,7 +11,7 @@
                         class="md:flex-[1_200px] md:max-w-[150px] md:pb-[30px] m-[auto_0] block mb-[8px] text-[15px] font-medium">
                         Full Name </label>
                     <input required type="text"
-                        class="md:flex-[2_550px] md:max-w-[100%] text-[16px] w-[100%] rounded-[5px] shadow-[0_1px_0_rgba(0,0,0,0.03)] h-auto m-0 outline-0 p-[15px] mb-[30px] border-none opacity-50 focus:border-[2px] focus:border-solid focus:border-black opacity-100 placeholder-shown:text-right"
+                        class="md:flex-[2_550px] md:max-w-[100%] text-[16px] bg-gray-100 w-[100%] rounded-[5px] shadow-[0_1px_0_rgba(0,0,0,0.03)] h-auto m-0 outline-0 p-[15px] mb-[30px] border-none opacity-50 focus:border-[2px] focus:border-solid focus:border-black opacity-100 placeholder-shown:text-right"
                         id="name" name="name" value="{{ old('name') }}" placeholder="Required">
                     @error('name')
                         <p class="text-red-500 text-[18px] mt-1">{{ $message }}</p>
@@ -23,7 +23,7 @@
                         class="md:flex-[1_200px] md:max-w-[150px] md:pb-[30px] m-[auto_0] block mb-[8px] text-[15px] font-medium">
                         Email Address </label>
                     <input required type="email"
-                        class="md:flex-[2_550px] md:max-w-[100%] text-[16px] w-[100%] rounded-[5px] shadow-[0_1px_0_rgba(0,0,0,0.03)] h-auto m-0 outline-0 p-[15px] mb-[30px] border-none opacity-50 focus:border-[2px] focus:border-solid focus:border-black opacity-100 placeholder-shown:text-right"
+                        class="md:flex-[2_550px] md:max-w-[100%] bg-gray-100 text-[16px] w-[100%] rounded-[5px] shadow-[0_1px_0_rgba(0,0,0,0.03)] h-auto m-0 outline-0 p-[15px] mb-[30px] border-none opacity-50 focus:border-[2px] focus:border-solid focus:border-black opacity-100 placeholder-shown:text-right"
                         id="mail" name="email" value="{{ old('email') }}" placeholder="Required">
                     @error('email')
                         <p class="text-red-500 text-[18px] mt-1">{{ $message }}</p>
@@ -35,7 +35,7 @@
                         class="md:flex-[1_200px] md:max-w-[150px] md:pb-[30px] m-[auto_0] block mb-[8px] text-[15px] font-medium">
                         Password </label>
                     <input type="password"
-                        class="md:flex-[2_550px] md:max-w-[100%] text-[16px] w-[100%] rounded-[5px] shadow-[0_1px_0_rgba(0,0,0,0.03)] h-auto m-0 outline-0 p-[15px] mb-[30px] border-none opacity-50 focus:border-[2px] focus:border-solid focus:border-black opacity-100 "
+                        class="md:flex-[2_550px] md:max-w-[100%] bg-gray-100 text-[16px] w-[100%] rounded-[5px] shadow-[0_1px_0_rgba(0,0,0,0.03)] h-auto m-0 outline-0 p-[15px] mb-[30px] border-none opacity-50 focus:border-[2px] focus:border-solid focus:border-black opacity-100 "
                         id="pass" name="password">
                     @error('password')
                         <p class="text-red-500 text-[18px] mt-1">{{ $message }}</p>
@@ -48,7 +48,7 @@
                         class="md:flex-[1_200px] md:max-w-[150px] md:pb-[30px] m-[auto_0] block mb-[8px] text-[15px] font-medium">
                         Phone Number </label>
                     <input type="text"
-                        class="md:flex-[2_550px] md:max-w-[100%] text-[16px] w-[100%] rounded-[5px] shadow-[0_1px_0_rgba(0,0,0,0.03)] h-auto m-0 outline-0 p-[15px] mb-[30px] border-none opacity-50 focus:border-[2px] focus:border-solid focus:border-black opacity-100 "
+                        class="md:flex-[2_550px] md:max-w-[100%] bg-gray-100 text-[16px] w-[100%] rounded-[5px] shadow-[0_1px_0_rgba(0,0,0,0.03)] h-auto m-0 outline-0 p-[15px] mb-[30px] border-none opacity-50 focus:border-[2px] focus:border-solid focus:border-black opacity-100 "
                         id="tel" name="phone" value="{{ old('phone') }}">
                     @error('phone')
                         <p class="text-red-500 text-[18px] mt-1">{{ $message }}</p>
@@ -61,7 +61,7 @@
                         class="md:flex-[1_200px] md:max-w-[150px] md:pb-[30px] m-[auto_0] block mb-[8px] text-[15px] font-medium">
                         City </label>
                     <input type="text"
-                        class="md:flex-[2_550px] md:max-w-[100%] text-[16px] w-[100%] rounded-[5px] shadow-[0_1px_0_rgba(0,0,0,0.03)] h-auto m-0 outline-0 p-[15px] mb-[30px] border-none opacity-50 focus:border-[2px] focus:border-solid focus:border-black opacity-100"
+                        class="md:flex-[2_550px] md:max-w-[100%] bg-gray-100 text-[16px] w-[100%] rounded-[5px] shadow-[0_1px_0_rgba(0,0,0,0.03)] h-auto m-0 outline-0 p-[15px] mb-[30px] border-none opacity-50 focus:border-[2px] focus:border-solid focus:border-black opacity-100"
                         id="city" name="city" value="{{ old('city') }}">
                     @error('city')
                         <p class="text-red-500 text-[18px] mt-1">{{ $message }}</p>
@@ -73,7 +73,7 @@
                         class="md:flex-[1_200px] md:max-w-[150px] md:pb-[30px] m-[auto_0] block mb-[8px] text-[15px] font-medium">
                         State </label>
                     <input type="text"
-                        class="md:flex-[2_550px] md:max-w-[100%] text-[16px] w-[100%] rounded-[5px] shadow-[0_1px_0_rgba(0,0,0,0.03)] h-auto m-0 outline-0 p-[15px] mb-[30px] border-none opacity-50 focus:border-[2px] focus:border-solid focus:border-black opacity-100"
+                        class="md:flex-[2_550px] md:max-w-[100%] bg-gray-100 text-[16px] w-[100%] rounded-[5px] shadow-[0_1px_0_rgba(0,0,0,0.03)] h-auto m-0 outline-0 p-[15px] mb-[30px] border-none opacity-50 focus:border-[2px] focus:border-solid focus:border-black opacity-100"
                         id="state" name="state" value="{{ old('state') }}">
                     @error('state')
                         <p class="text-red-500 text-[18px] mt-1">{{ $message }}</p>
@@ -86,7 +86,7 @@
                         class="md:flex-[1_200px] md:max-w-[150px] md:pb-[30px] m-[auto_0] block mb-[8px] text-[15px] font-medium">
                         Zip Code </label>
                     <input type="text"
-                        class="md:flex-[2_550px] md:max-w-[100%] md:max-w-[25%] text-[16px] w-[100%] rounded-[5px] shadow-[0_1px_0_rgba(0,0,0,0.03)] h-auto m-0 outline-0 p-[15px] mb-[30px] border-none opacity-50 focus:border-[2px] focus:border-solid focus:border-black opacity-100"
+                        class="md:flex-[2_550px] md:max-w-[100%] md:max-w-[25%] bg-gray-100 text-[16px] w-[100%] rounded-[5px] shadow-[0_1px_0_rgba(0,0,0,0.03)] h-auto m-0 outline-0 p-[15px] mb-[30px] border-none opacity-50 focus:border-[2px] focus:border-solid focus:border-black opacity-100"
                         id="zip_code" name="zip" value="{{ old('zip') }}">
                     @error('zip')
                         <p class="text-red-500 text-[18px] mt-1">{{ $message }}</p>

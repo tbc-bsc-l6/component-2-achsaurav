@@ -1,62 +1,87 @@
-
 <!DOCTYPE html>
-<html lang="en" class="text-[65.5%]">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>STORE</title>
     {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
-    <!-- <link rel="stylesheet" href="/style.css"> -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    {{-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.7.1/cdn.min.js" integrity="sha512-gJEPTYpQVWBbJrUDHGLwMaDXRtGRnAym+3egw7LDYzSzMEqSWSj64wW5JZxcgJFSLXSf93t5sE9shlQDZsbyAQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
-<body class="bg-gray-100">
 
-    <nav class="flex h-[80px] w-[100%] items-center justify-between p-[0_50px_0_100px] flex-wrap">
-        <div class="text-[35px] font-semibold">
-           store
-        </div>
-        
-        <ul class="flex flex-wrap list-none	">
-            <form action="#" method="get">
-                <input type="text" name="search" id="search" placeholder="search" value="{{request('search')}}" class="rounded-[5px] h-[40px] w-[150px] text-[16px]">
-            </form>
-            <li class="m-[0_5px]"><a class="no-underline text-[18px] font-medium p-[8px_15px] rounded-[5px] tracking-[1px] transition-all delay-[0.3s]" href="/">HOME</a></li>
-           <li class="m-[0_5px]"><a class="no-underline text-[18px] font-medium p-[8px_15px] rounded-[5px] tracking-[1px] transition-all delay-[0.3s]" href="#">BOOK</a></li>
-           <li class="m-[0_5px]"><a href="#" class="no-underline text-[18px] font-medium p-[8px_15px] rounded-[5px] tracking-[1px] transition-all delay-[0.3s]">CD</a></li>
-           <li class="m-[0_5px]"><a href="#" class="no-underline text-[18px] font-medium p-[8px_15px] rounded-[5px] tracking-[1px] transition-all delay-[0.3s]">GAME</a></li>
-           {{-- @guest
+<body>
+
+    <section class="px-6 py-8">
+        <nav class="md:flex md:justify-between md:items-center">
+            <div>
+                <a href="/">
+                    <div class="text-[35px] font-semibold">
+                        store
+                    </div>
+                </a>
+            </div>
+
+            {{-- @guest
                 <li class="m-[0_5px]"><a href="/register" class="no-underline text-[18px] font-medium p-[8px_15px] rounded-[5px] tracking-[1px] transition-all delay-[0.3s]">REGISTER</a></li>
            @endguest --}}
-           {{-- @unless (auth()->check())
+            {{-- @unless(auth()->check())
                 <li class="m-[0_5px]"><a href="/register" class="no-underline text-[18px] font-medium p-[8px_15px] rounded-[5px] tracking-[1px] transition-all delay-[0.3s]">REGISTER</a></li>
            @endunless --}}
 
-           @auth
-                <li class="m-[0_5px] text-[18px] font-medium">Welcome, {{auth()->user()->name}}</li>
-                <a href="/admin/posts/create"><li class="m-[0_5px] text-[18px] font-medium">New Post</li></a>
-                <li class="m-[0_5px] text-[18px] font-medium">
-                    <form action="/logout" method="post">
+
+            @auth
+                <div class="mt-8 md:mt-0 flex">{{--flex-row-reverse--}}
+                    <div x-data="{show: false}" @click.away="show=false">
+                        <button @click="show= !show"
+                            class="py-2 pl-3 text-sm font-semibold w-full lg:w-32 text-left flex lg:inline-flex bg-blue-500 rounded-full text-white">{{auth()->user()->name}}
+                            
+                        </button>
+        
+                        <div x-show="show" class="absolute bg-gray-100 z-50 overflow-auto max-h-52">
+                            
+                            <a href="/admin/posts" class="block text-left px-3 hover:bg-gray-300  mt-1">Dashboard</a>
+                            <a href="/admin/posts/create" class="block text-left px-3 hover:bg-gray-300  mt-1">New Post</a>
+                            
+                        </div>
+                    </div>
+                    {{-- <a href="/" class="text-xs font-bold uppercase">Welcome, {{ auth()->user()->name }}</a> --}}
+                    {{-- <a href="/" class="text-xs font-bold uppercase">Welcome</a> --}}
+
+                    
+                    <form action="/logout" method="post" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
                         @csrf
-                        <button type="submit" >Logout</button>
+                        <button type="submit">Logout</button>
                     </form>
-                </li>
+                        
+                    
+                </div>
+
             @else
-                <li class="m-[0_5px]"><a href="/login" class="no-underline text-[18px] font-medium p-[8px_15px] rounded-[5px] tracking-[1px] transition-all delay-[0.3s]">LOGIN</a></li>
+                <div class="mt-8 md:mt-0">
+                    <a href="/login" class="text-xs font-bold uppercase">Login</a>
 
-                <li class="m-[0_5px]"><a href="/register" class="no-underline text-[18px] font-medium p-[8px_15px] rounded-[5px] tracking-[1px] transition-all delay-[0.3s]">REGISTER</a></li>
-           @endauth
-        </ul>
-    </nav>
+                    <a href="/register" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
+                        Sign Up
+                    </a>
+                </div>
 
-    
-    {{$slot}}
+            @endauth
 
-    @if (session()->has('success'))
-        <div class="fixed bg-blue-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-[16px]">
-            <p>{{session('success')}}</p>
-        </div>
-    @endif
+        </nav>
+
+
+        {{ $slot }}
+
+        @if (session()->has('success'))
+            <div class="fixed bg-blue-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-[16px]">
+                <p>{{ session('success') }}</p>
+            </div>
+        @endif
+
+
+
 </body>
+
 </html>

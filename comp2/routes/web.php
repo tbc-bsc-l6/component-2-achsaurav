@@ -23,7 +23,11 @@ Route::get('/', [PostController::class,'show']);
 
 Route::get('/categories/{category:slug}',function(Category $category){
     return view('home',[
-        'posts'=>$category->post
+        
+        'posts'=>$category->post,
+        'categories'=>Category::all(),
+        'currentCategory'=>$category
+
     ]);
 });
 

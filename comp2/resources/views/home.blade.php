@@ -1,37 +1,73 @@
 <x-header>
-    <!-- review section starts  -->
 
-    <section class="lg:p-[2rem] p-[2rem_9%]" id="review">
+    @include('_posts-header')
 
-        <h1 class="text-center text-[4rem] p-[1rem] uppercase text-[#2c2c54]"> All <span
-                class="uppercase text-[#ff9f1a]">Products</span> </h1>
 
-        <div class="flex flex-wrap gap-[1.5rem]">
+    <main class="max-w-6xl mx-auto mt-2 lg:mt-20 space-y-6">
+
+        <div class="lg:grid lg:grid-cols-3">
+            
             @foreach ($posts as $post)
-                <div
-                    class="flex-[1_1_30rem] text-center rounded-[.5rem] p-[2rem] bg-[#f9f9f9] border-[.1rem] border-solid border-[rgba(0,0,0,.1)] ">
-                    <h3 class="text-[2.5rem] text-[#2c2c54]">{{$post->title}}</h3>
-                    <h5 class="text-[2rem]">{{$post->firstname}} {{$post->surname}}</h5>
+                <article
+                    class="transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">
+                    <div class="py-6 px-5">
 
-                    <p class="text-[1.6rem] text-[#666] p-[1rem_0] "><span>Category:</span><a href="/categories/{{$post->category->slug}}"
-                            class="hover:text-blue-600 underline hover:italic">{{$post->category->name}}</a></p>
 
-                    <p class="text-[1.6rem] text-[#666] p-[1rem_0]">Price: ${{$post->price}}</p>
-                    <p class="text-[1.6rem] text-[#666] p-[1rem_0]">Number of pages: {{$post->pages}}</p>
-                    {{-- <p class="text-[1.6rem] text-[#666] p-[1rem_0]">Lorem ipsum, dolor sit amet consectetur adipisicing
-                    elit. Fugiat, quos eum. Laborum aut a consequatur
-                    ducimus, molestias possimus quisquam rerum temporibus ipsum voluptate accusamus, unde ab
-                    asperiores?
-                </p> --}}
-                </div>
-                
+                        <div class="mt-4 flex flex-col justify-between">
+                            <header>
+                                <div class="space-x-2">
+                                    <a href="#"
+                                        class="px-3 py-1 border border-red-300 rounded-full text-red-300 text-xs uppercase font-semibold"
+                                        style="font-size: 10px">Updates</a>
+                                </div>
+
+                                <div class="mt-4">
+                                    <h1 class="text-3xl">
+                                        {{ $post->title }}
+                                    </h1>
+
+                                    <span class="mt-2 block text-gray-400 text-xs">
+                                        Updated <time>{{$post->created_at->diffForHumans()}}</time>
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <span>Price : ${{ $post->price }}</span>
+                                </div>
+                                <div>
+                                    <span>Pages: {{ $post->pages }}</span>
+                                </div>
+                            </header>
+
+                            <footer class="flex justify-between items-center mt-8">
+                                <div class="flex items-center text-sm">
+                                    <div class="ml-3">
+                                        <h5 class="font-bold">{{ $post->firstname }} {{ $post->surname }}</h5>
+                                        <a href="/categories/{{ $post->category->slug }}" class="text-blue-500">
+                                            <h6 class="text-blue-500">{{ $post->category->name }}</h6>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <a href="#"
+                                        class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-8">Read
+                                        More</a>
+                                </div>
+                            </footer>
+                        </div>
+
+                    </div>
+
+                </article>
             @endforeach
             
         </div>
         {{-- {{$posts->links('pagination::simple-tailwind')}} --}}
-        {{$posts->links('pagination::simple-tailwind')}}
-
-    </section>
-
-    <!-- review section ends -->
+        {{-- {{ $posts->links() }} --}}
+        {{-- {{ $posts->links('pagination::tailwind') }} --}}
+    </main>
+    
 </x-header>
+
+
